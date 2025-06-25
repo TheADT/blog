@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Getting Started with Minimalist Web Design - My Blog</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.7;
+            color: #333;
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 2rem;
+            background: #fafafa;
+        }
+
+        .back-link {
+            display: inline-block;
+            margin-bottom: 2rem;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.2s ease;
+        }
+
+        .back-link:hover {
+            color: #2980b9;
+        }
+
+        .back-link::before {
+            content: "← ";
+        }
+
+        article {
+            background: white;
+            padding: 3rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+        }
+
+        .post-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            font-weight: 400;
+            color: #2c3e50;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .post-meta {
+            color: #7f8c8d;
+            font-size: 1rem;
+        }
+
+        .post-content {
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .post-content h2 {
+            font-size: 1.6rem;
+            color: #2c3e50;
+            margin: 2.5rem 0 1rem 0;
+            font-weight: 500;
+        }
+
+        .post-content h3 {
+            font-size: 1.3rem;
+            color: #34495e;
+            margin: 2rem 0 1rem 0;
+            font-weight: 500;
+        }
+
+        .post-content p {
+            margin-bottom: 1.5rem;
+        }
+
+        .post-content blockquote {
+            border-left: 4px solid #3498db;
+            padding-left: 1.5rem;
+            margin: 2rem 0;
+            font-style: italic;
+            color: #555;
+            background: #f8f9fa;
+            padding: 1rem 1rem 1rem 2rem;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .post-content code {
+            background: #f4f4f4;
+            padding: 0.2rem 0.4rem;
+            border-radius: 3px;
+            font-family: 'Monaco', 'Menlo', monospace;
+            font-size: 0.9em;
+        }
+
+        .post-content ul, .post-content ol {
+            margin: 1.5rem 0;
+            padding-left: 2rem;
+        }
+
+        .post-content li {
+            margin-bottom: 0.5rem;
+        }
+
+        .highlight {
+            background: linear-gradient(120deg, #a8e6cf 0%, #dcedc1 100%);
+            padding: 0.1rem 0.3rem;
+            border-radius: 3px;
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e0e0e0;
+            color: #7f8c8d;
+        }
+
+        .share-buttons {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .share-button {
+            display: inline-block;
+            margin: 0 0.5rem;
+            padding: 0.5rem 1rem;
+            background: #3498db;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 0.9rem;
+            transition: background 0.2s ease;
+        }
+
+        .share-button:hover {
+            background: #2980b9;
+        }
+
+        @media (max-width: 600px) {
+            body {
+                padding: 1rem;
+            }
+            
+            article {
+                padding: 2rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .post-content {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-link">Back to Blog</a>
+    
+    <article>
+        <header class="post-header">
+            <h1>Getting Started with Minimalist Web Design</h1>
+            <div class="post-meta">Published on June 25, 2025</div>
+        </header>
+
+        <div class="post-content">
+            <p>In a world cluttered with complex interfaces and overwhelming digital experiences, <span class="highlight">minimalist web design</span> offers a breath of fresh air. It's not just about using less—it's about using what matters most.</p>
+
+            <h2>What is Minimalist Design?</h2>
+            
+            <p>Minimalist web design is founded on the principle of simplicity. It strips away unnecessary elements, focusing on essential content and functionality. This approach doesn't mean boring or plain; instead, it means purposeful and elegant.</p>
+
+            <blockquote>
+                "Simplicity is the ultimate sophistication." - Leonardo da Vinci
+            </blockquote>
+
+            <h3>Core Principles</h3>
+
+            <p>When building minimalist websites, keep these fundamental principles in mind:</p>
+
+            <ul>
+                <li><strong>White Space is Your Friend:</strong> Don't feel compelled to fill every pixel. White space gives your content room to breathe and helps users focus on what's important.</li>
+                <li><strong>Typography Matters:</strong> With fewer visual elements, your choice of fonts becomes crucial. Select readable, elegant typefaces that complement your content.</li>
+                <li><strong>Color with Purpose:</strong> Use a limited color palette. Every color should serve a specific function—whether it's for branding, navigation, or highlighting important information.</li>
+                <li><strong>Content First:</strong> Let your content guide the design, not the other way around. Every design decision should support and enhance your message.</li>
+            </ul>
+
+            <h2>Benefits of Going Minimal</h2>
+
+            <p>Embracing minimalism in web design offers numerous advantages:</p>
+
+            <p><strong>Faster Loading Times:</strong> Fewer elements mean smaller file sizes and quicker load times. In our impatient digital world, every second counts.</p>
+
+            <p><strong>Better User Experience:</strong> When users aren't overwhelmed by choices and distractions, they can focus on what they came for. Navigation becomes intuitive, and actions become clear.</p>
+
+            <p><strong>Mobile-Friendly:</strong> Minimalist designs naturally translate well to mobile devices. With less clutter, your site will look great on any screen size.</p>
+
+            <h3>Getting Started</h3>
+
+            <p>Ready to embrace minimalism? Start with these practical steps:</p>
+
+            <ol>
+                <li>Audit your current design and identify unnecessary elements</li>
+                <li>Choose a simple, readable font family</li>
+                <li>Limit your color palette to 2-3 colors maximum</li>
+                <li>Increase white space around your content</li>
+                <li>Simplify your navigation structure</li>
+            </ol>
+
+            <p>Remember, minimalist design isn't about removing everything—it's about <span class="highlight">keeping everything that serves a purpose</span> and removing everything that doesn't.</p>
+
+            <h2>Final Thoughts</h2>
+
+            <p>Minimalist web design is more than just an aesthetic choice; it's a philosophy that puts users and content first. By focusing on what truly matters, you create experiences that are not only beautiful but also functional and memorable.</p>
+
+            <p>Start small, iterate often, and always ask yourself: "Does this element serve my users?" If the answer is no, it's time to let it go.</p>
+        </div>
+
+        <div class="share-buttons">
+            <a href="#" class="share-button">Share on Twitter</a>
+            <a href="#" class="share-button">Share on LinkedIn</a>
+        </div>
+    </article>
+
+    <footer>
+        <p>&copy; 2025 My Blog. Built with ❤️ and hosted on GitHub Pages.</p>
+    </footer>
+</body>
+</html>
