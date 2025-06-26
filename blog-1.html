@@ -2,8 +2,10 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"="width=device-width, initial-scale=1.0">
-    <title>Getting Started with Minimalist Web Design / Terminal</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My First Blog Post / Terminal</title>
+    <!-- Markdown parser -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/marked/4.3.0/marked.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -24,45 +26,58 @@
         .terminal-container {
             max-width: 1000px;
             margin: 0 auto;
+            position: relative;
         }
         
-        .boot-sequence {
-            animation: typewriter 0.6s steps(50) forwards;
+        .navigation-helper {
+            position: absolute;
+            top: 50px;
+            right: 0;
+            color: #ffffff;
+            font-size: 12px;
+            text-align: right;
         }
         
-        .back-nav {
-            margin-top: 20px;
-            animation: fadeIn 0.3s ease-in 0.6s both;
-        }
-        
-        .back-nav a {
-            color: #00ff00;
+        .home-link {
+            position: absolute;
+            top: 0;
+            right: 0;
+            color: #ffffff;
             text-decoration: none;
+            padding: 10px;
+            border: 1px solid #ffffff;
+            background-color: transparent;
             transition: all 0.2s ease;
         }
         
-        .back-nav a:hover {
-            text-shadow: 0 0 5px #00ff00;
+        .home-link:hover {
+            background-color: #ffffff;
+            color: #000000;
         }
         
-        .article-header {
-            margin-top: 20px;
-            animation: fadeIn 0.3s ease-in 0.9s both;
+        .blog-header {
+            margin-top: 60px;
+            margin-bottom: 20px;
         }
         
         .article-content {
             margin-top: 20px;
-            animation: fadeIn 0.3s ease-in 1.2s both;
+        }
+        
+        .article-content h1 {
+            color: #ffffff;
+            margin: 25px 0 15px 0;
+            font-size: 18px;
         }
         
         .article-content h2 {
-            color: #00ff00;
+            color: #ffffff;
             margin: 25px 0 10px 0;
             font-size: 16px;
         }
         
         .article-content h3 {
-            color: #ffff00;
+            color: #ffffff;
             margin: 20px 0 8px 0;
             font-size: 14px;
         }
@@ -83,22 +98,51 @@
         }
         
         .article-content blockquote {
-            border-left: 3px solid #00ff00;
+            border-left: 3px solid #ffffff;
             padding-left: 15px;
             margin: 20px 0;
             color: #aaa;
             font-style: italic;
         }
         
-        .highlight {
-            background-color: #003300;
-            color: #00ff00;
+        .article-content code {
+            background-color: #333;
+            color: #ffffff;
             padding: 2px 4px;
             border-radius: 2px;
+            font-family: 'Courier New', monospace;
+        }
+        
+        .article-content pre {
+            background-color: #333;
+            color: #ffffff;
+            padding: 10px;
+            border-radius: 4px;
+            overflow-x: auto;
+            margin: 15px 0;
+        }
+        
+        .article-content strong {
+            color: #ffffff;
+        }
+        
+        .article-content em {
+            color: #ccc;
+            font-style: italic;
+        }
+        
+        .article-content a {
+            color: #ffffff;
+            text-decoration: underline;
+            transition: all 0.2s ease;
+        }
+        
+        .article-content a:hover {
+            text-shadow: 0 0 5px #ffffff;
         }
         
         .separator {
-            color: #00ff00;
+            color: #ffffff;
             margin: 20px 0;
         }
         
@@ -108,28 +152,10 @@
             border-top: 1px solid #333;
             text-align: center;
             color: #888;
-            animation: fadeIn 0.3s ease-in 1.5s both;
         }
         
         .cursor {
             animation: blink 1s infinite;
-        }
-        
-        @keyframes typewriter {
-            0% { opacity: 0; }
-            1% { opacity: 1; }
-            100% { opacity: 1; }
-        }
-        
-        @keyframes fadeIn {
-            from { 
-                opacity: 0; 
-                transform: translateY(10px); 
-            }
-            to { 
-                opacity: 1; 
-                transform: translateY(0); 
-            }
         }
         
         @keyframes blink {
@@ -146,119 +172,121 @@
             .terminal-container {
                 padding: 0;
             }
+            
+            .home-link {
+                position: static;
+                display: block;
+                margin-bottom: 10px;
+                text-align: center;
+            }
+            
+            .navigation-helper {
+                position: static;
+                text-align: center;
+                margin-bottom: 20px;
+            }
+            
+            .blog-header {
+                margin-top: 20px;
+                margin-bottom: 15px;
+            }
         }
     </style>
 </head>
 <body>
     <div class="terminal-container">
-        <div class="boot-sequence">
-<pre>Loading blog post...
-[████████████████████████] 100%
-Rendering content...
-[████████████████████████] 100%</pre>
+        <a href="index.html" class="home-link">Home</a>
+        
+        <div class="navigation-helper">
+<pre>Use [↑] [↓] arrows to navigate
+[ESC] to return home</pre>
         </div>
 
-        <div class="back-nav">
-<pre><a href="#" onclick="goBack()">← [BACK] to blog index</a></pre>
-        </div>
-
-        <div class="article-header">
-<pre><div class="separator">───────────────────────────────────────</div>
-<span style="color: #00ff00; font-size: 16px;">BLOG POST [01]</span>
-Title: Getting Started with Minimalist Web Design
-Date: June 25, 2025
+        <div class="blog-header">
+<pre><span style="color: #ffffff; font-size: 16px;">BLOG POST [01]</span>
+Title: My First Blog Post
+Date: June 26, 2025
 Status: [ACTIVE]
 <div class="separator">───────────────────────────────────────</div></pre>
         </div>
 
-        <div class="article-content">
-            <p>In a world cluttered with complex interfaces and overwhelming digital experiences, <span class="highlight">minimalist web design</span> offers a breath of fresh air. It's not just about using less—it's about using what matters most.</p>
-
-            <h2>What is Minimalist Design?</h2>
-            
-            <p>Minimalist web design is founded on the principle of simplicity. It strips away unnecessary elements, focusing on essential content and functionality. This approach doesn't mean boring or plain; instead, it means purposeful and elegant.</p>
-
-            <blockquote>
-                "Simplicity is the ultimate sophistication." - Leonardo da Vinci
-            </blockquote>
-
-            <h3>Core Principles</h3>
-
-            <p>When building minimalist websites, keep these fundamental principles in mind:</p>
-
-            <ul>
-                <li><strong>White Space is Your Friend:</strong> Don't feel compelled to fill every pixel. White space gives your content room to breathe and helps users focus on what's important.</li>
-                <li><strong>Typography Matters:</strong> With fewer visual elements, your choice of fonts becomes crucial. Select readable, elegant typefaces that complement your content.</li>
-                <li><strong>Color with Purpose:</strong> Use a limited color palette. Every color should serve a specific function—whether it's for branding, navigation, or highlighting important information.</li>
-                <li><strong>Content First:</strong> Let your content guide the design, not the other way around. Every design decision should support and enhance your message.</li>
-            </ul>
-
-            <h2>Benefits of Going Minimal</h2>
-
-            <p>Embracing minimalism in web design offers numerous advantages:</p>
-
-            <p><strong>Faster Loading Times:</strong> Fewer elements mean smaller file sizes and quicker load times. In our impatient digital world, every second counts.</p>
-
-            <p><strong>Better User Experience:</strong> When users aren't overwhelmed by choices and distractions, they can focus on what they came for. Navigation becomes intuitive, and actions become clear.</p>
-
-            <p><strong>Mobile-Friendly:</strong> Minimalist designs naturally translate well to mobile devices. With less clutter, your site will look great on any screen size.</p>
-
-            <h3>Getting Started</h3>
-
-            <p>Ready to embrace minimalism? Start with these practical steps:</p>
-
-            <ol>
-                <li>Audit your current design and identify unnecessary elements</li>
-                <li>Choose a simple, readable font family</li>
-                <li>Limit your color palette to 2-3 colors maximum</li>
-                <li>Increase white space around your content</li>
-                <li>Simplify your navigation structure</li>
-            </ol>
-
-            <p>Remember, minimalist design isn't about removing everything—it's about <span class="highlight">keeping everything that serves a purpose</span> and removing everything that doesn't.</p>
-
-            <h2>Final Thoughts</h2>
-
-            <p>Minimalist web design is more than just an aesthetic choice; it's a philosophy that puts users and content first. By focusing on what truly matters, you create experiences that are not only beautiful but also functional and memorable.</p>
-
-            <p>Start small, iterate often, and always ask yourself: "Does this element serve my users?" If the answer is no, it's time to let it go.</p>
-
-<pre style="margin-top: 30px;">
-End of post. Press [ESC] to return<span class="cursor">_</span>
-</pre>
+        <div class="article-content" id="markdown-content">
+            <!-- Markdown content will be rendered here -->
         </div>
 
         <div class="footer">
 <pre>───────────────────────────────────────
 © 2025 My Blog. Built with ❤️ and hosted on GitHub Pages.
-Article word count: 487 | Reading time: ~2 min
+Press [ESC] or click Home to return<span class="cursor">_</span>
 ───────────────────────────────────────</pre>
         </div>
     </div>
 
     <script>
-        function goBack() {
-            // Simulate terminal loading
-            document.body.style.opacity = '0.3';
-            document.body.innerHTML = `
-                <div style="text-align: center; margin-top: 50px; font-family: 'Courier New', monospace; color: #00ff00;">
-                    <pre>Returning to blog index...
-[████████████████████████] 100%
-Loading...</pre>
-                </div>
-            `;
-            
-            setTimeout(() => {
-                alert('In a real blog, this would return to the index page!');
-                document.location.reload();
-            }, 600);
-        }
+        // Your markdown content goes here
+        const markdownContent = `
+# Welcome to My Blog
+
+This is my first blog post written in **markdown**! It's much easier than writing HTML directly.
+
+## Why Markdown is Great
+
+Markdown makes writing content simple and clean. Here are some reasons why I love it:
+
+- **Easy to write**: No need to remember complex HTML tags
+- **Readable**: Even the raw markdown is easy to read
+- **Portable**: Works everywhere and converts to HTML seamlessly
+- **Fast**: Quick to write and edit
+
+### Code Examples
+
+You can easily include code snippets:
+
+\`\`\`javascript
+function greetReader() {
+    console.log("Hello, blog reader!");
+}
+\`\`\`
+
+Or inline code like \`console.log()\` for quick references.
+
+## Getting Started with Markdown
+
+Here's a quick reference for markdown syntax:
+
+1. **Headers**: Use \`#\` for headers (more \`#\` = smaller header)
+2. **Bold**: Wrap text in \`**double asterisks**\`
+3. **Italic**: Wrap text in \`*single asterisks*\`
+4. **Lists**: Use \`-\` or \`1.\` for lists
+5. **Links**: \`[text](url)\` format
+6. **Code**: Use backticks for \`inline code\` or triple backticks for blocks
+
+> "The best way to learn markdown is to start using it!" - Every developer ever
+
+## What's Next?
+
+In future posts, I'll be sharing:
+
+- Web development tips and tricks
+- Terminal customization guides  
+- Minimalist design principles
+- GitHub Pages deployment strategies
+
+Thanks for reading! This markdown-powered blog makes writing so much more enjoyable.
+
+---
+
+*Happy coding!*
+        `;
+
+        // Parse and render markdown
+        document.getElementById('markdown-content').innerHTML = marked.parse(markdownContent);
 
         // Add keyboard navigation
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 e.preventDefault();
-                goBack();
+                window.location.href = 'index.html';
             }
         });
     </script>
